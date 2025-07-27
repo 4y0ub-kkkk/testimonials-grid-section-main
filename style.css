@@ -1,0 +1,152 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+/* ||CSS RESET */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* || UTILITY CLASSES */
+.white-fade{
+    color: rgba(255, 255, 255, 0.75);
+}
+.black{
+    color: hsl(0,0%,7%);
+}
+.dark-blue{
+   color: hsl(219, 29%, 14%);
+}
+.black-fade{
+    color: rgba(0, 0, 0, 0.75);
+}
+.grey{
+   color: hsl(0, 0%, 81%);
+}
+.outline{
+    outline: 2px solid hsl(264, 82%, 80%);
+
+}
+
+/* ||  VARIABLES */
+:root{
+    /* COLORS */
+    --purple-500: hsl(263, 55%, 52%);
+    --grey-500: hsl(217, 19%, 35%);
+    --dark-blue:hsl(219, 29%, 14%);
+    --grey-100: hsl(214, 17%, 92%);
+    --font-family:"Karla", sans-serif;
+    --font-size-lg:1.1rem;
+    --font-size-md:.8125rem;
+    --font-size-sm:.7rem;
+    --border-raduis:10px;
+    --box-shadow: 36px 36px 30px 0px rgba(0,0,0,0.1);
+
+}
+/* ||GENERAL STYLES */
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-family);
+    font-size: var(--font-size-md);
+    background-color: var(--grey-100);
+    color: white;
+    padding: 2rem;
+
+}
+
+main{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* || CARDS GENERAL STYLES */
+
+.cards-container{
+    max-width: 1115px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "dan dan jon kir"
+                        "jea pat pat kir";
+    row-gap: 1.43rem;
+    column-gap: 2rem;
+}
+.card{
+    padding: 2rem;
+    border-radius: var(--border-raduis);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+
+}
+
+.hook{
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+/* || CARD HEADER */
+
+.card-header{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.profile-img{
+    border-radius: 50%;
+    width: 30px;
+}
+.verified{
+    font-size: var(--font-size-sm);
+}
+
+.profile-description{
+    display: flex;
+    flex-direction: column;
+}
+
+/* || SPECIAL SYTLES */
+/* DANIAL */
+.danial{
+    grid-area: dan;
+    background-color: var(--purple-500);
+}
+
+.patrick{
+    grid-area:pat;
+    background-color: var(--dark-blue);
+}
+.jonathan{
+    grid-area:jon;
+    background-color: var(--grey-500);
+}
+.kira{
+    grid-area:kir;
+    background-color: white;
+}
+.jeanette {
+    grid-area:jea;
+     background-color: white;
+}
+
+@media screen and (max-width: 70em) {
+    .cards-container{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "dan dan jon"
+                        "jea pat pat "
+                        "kir kir kir";
+    }
+}
+@media screen and (max-width: 50em) {
+    .cards-container{
+        grid-template-columns: 1fr;
+grid-template-areas: "dan" "jon" "jea" "pat" "kir";
+    }
+}
